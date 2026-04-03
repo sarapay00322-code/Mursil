@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>واتس-سلة | لوحة التحكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #075E54; text-align: center; }
+        .section { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        label { display: block; margin-bottom: 10px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .btn { background: #25D366; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 18px; }
+        .btn:hover { background: #128C7E; }
+        .hint { font-size: 0.85rem; color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 واتس-سلة (Salla WhatsApp Bot)</h1>
+        <p style="text-align: center;">اربط متجرك وأتمت رسائل عملائك فوراً</p>
+
+        <div class="section">
+            <h3>1. إعدادات بوابة الواتساب (UltraMsg)</h3>
+            <label>Instance ID:</label>
+            <input type="text" id="instance" placeholder="مثال: instance12345">
+            <label>Token:</label>
+            <input type="password" id="token" placeholder="أدخل التوكن الخاص بك">
+        </div>
+
+        <div class="section">
+            <h3>2. تخصيص رسائل الطلبات</h3>
+            <label>رسالة طلب جديد:</label>
+            <textarea id="msg_new">مرحباً {{name}}، تم استلام طلبك رقم {{order_id}} بنجاح! شكراً لتسوقك معنا.</textarea>
+            <p class="hint">المتغيرات: {{name}}, {{order_id}}</p>
+
+            <label>رسالة شحن الطلب:</label>
+            <textarea id="msg_ship">بشرى سارة يا {{name}}! طلبك رقم {{order_id}} تم شحنه عبر {{company}}. تتبع طلبك: {{link}}</textarea>
+            <p class="hint">المتغيرات: {{company}}, {{link}}</p>
+        </div>
+
+        <button class="btn" onclick="saveSettings()">حفظ وتفعيل النظام</button>
+    </div>
+
+    <script>
+        function saveSettings() {
+            alert("تم حفظ الإعدادات! تأكد من وضع رابط الـ Webhook في لوحة مطوري سلة.");
+        }
+    </script>
+</body>
+</html>
